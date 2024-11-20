@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Weekly Forecast</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Weekly Forecast for <span th:text="${city}"></span></h1>
+<ul>
+    <li th:each="weather : ${weeklyWeather}">
+        <p th:text="'Description: ' + ${weather.description} + ' - Temp: ' + ${weather.temperature} + ' °C'"></p>
+        <img th:src="@{${weather.icon}}" alt="Weather icon">
+    </li>
+</ul>
+<a href="/">Back</a>
+</body>
+</html>

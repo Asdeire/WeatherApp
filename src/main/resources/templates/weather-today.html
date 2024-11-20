@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Today</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Weather in <span th:text="${weather.cityName}">City</span>, <span th:text="${weather.country}">Country</span></h1>
+<p th:text="${weather.description}">Weather description</p>
+<p>Temperature: <span th:text="${weather.temperature}">0</span> °C</p>
+<img th:src="${weather.icon}" alt="Weather icon">
+<a href="/">Back</a>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Weather App</h1>
+<form action="#" method="get" id="weather-form">
+    <input type="text" name="city" placeholder="Enter city" required>
+    <select name="forecast-type" required>
+        <option value="today">Today's Weather</option>
+        <option value="weekly">Weekly Forecast</option>
+    </select>
+    <button type="submit">Check Weather</button>
+</form>
+
+<script>
+    document.getElementById('weather-form').addEventListener('submit', function(event) {
+        var city = document.querySelector('input[name="city"]').value;
+        var forecastType = document.querySelector('select[name="forecast-type"]').value;
+
+        if (forecastType === 'today') {
+            this.action = '/today?city=' + city;
+        } else if (forecastType === 'weekly') {
+            this.action = '/weekly?city=' + city;
+        }
+    });
+</script>
+
+</body>
+</html>
